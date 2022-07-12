@@ -21,7 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Controller Group for handling sales requests
 Route::controller(SalesController::class)->prefix('sales')->group(function (){
-    Route::post('/generate_sale','generate_sale');
-    Route::post('/store_sale','store_sale');
-    Route::get('/get_all_sales','get_all_sales');
+    Route::post('/generate_sale','generate_sale')->name('generateSale');
+    Route::post('/store_sale','store_sale')->name('storeSale');
+    Route::get('/get_all_sales','get_all_sales')->name('getAllSales');
 });
